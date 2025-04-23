@@ -187,6 +187,7 @@ namespace TheNetherWorldClient.ViewModel
                 return new RelayCommand<OperatorView>((operatorView) =>
                 {
                     operatorView.InsertStackPanel.Visibility = Visibility.Visible;
+                    operatorView.ComboxSelect.IsEnabled = true;
                     OperatorInfoData = new OperatorInfo();
                 });
             }

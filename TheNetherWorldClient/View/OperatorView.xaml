@@ -83,8 +83,10 @@
                 <TextBox Text="用户名:"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>
                 <TextBox Text="{Binding OperatorInfoData.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" VerticalAlignment="Center" FontSize="18" ></TextBox>
 
+
                 <TextBox Text="角色:"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>
-                <TextBox Text="{Binding OperatorInfoData.RoleName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" VerticalAlignment="Center" FontSize="18" ></TextBox>
+                <ComboBox x:Name="ComboxSelect" ItemsSource="{Binding DataContext.Options, RelativeSource={RelativeSource AncestorType=StackPanel}}"  SelectedItem="{Binding OperatorInfoData.RoleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="120" Style="{StaticResource DataGridComboxStyle}"  />
+                <!--<TextBox Text="{Binding OperatorInfoData.RoleName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" VerticalAlignment="Center" FontSize="18" ></TextBox>-->
 
                 <TextBox Text="密码:"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>
                 <TextBox Text="{Binding OperatorInfoData.Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" VerticalAlignment="Center" FontSize="18" ></TextBox>
