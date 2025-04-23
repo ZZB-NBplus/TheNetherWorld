@@ -105,7 +105,7 @@ namespace BLL
                     }
                     OperationLog operationLog = new OperationLog();
                     operationLog.OperationTime = DateTime.Now;
-                    operationLog.Info = "添加审判信息记录" + uniqueCode;
+                    operationLog.Info = "添加生灵登出记录" + uniqueCode;
                     operationLog.Operator = operatorInfo;
                     db.OperationLogs.Add(operationLog);
 
