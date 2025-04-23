@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="TheNetherWorldClient.View.OperatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TheNetherWorldClient.View"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             x:Name="currentView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Text=">>角色管理"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 0 0"></TextBlock>
+        </Grid>
+
+
+        <DataGrid Grid.Row="1" x:Name="entityDataGrid" ItemsSource="{Binding OperatorInfoList}"  RowStyle="{StaticResource DataGridRowStyle}"  Style="{StaticResource DataGridStyle}" CellStyle="{StaticResource DataGridCellStyle}"  AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Width="auto" Header="用户名" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource GeneralTextBoxStyle}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="auto" Header="角色" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <ComboBox ItemsSource="{Binding DataContext.Options, RelativeSource={RelativeSource AncestorType=DataGrid}}"  SelectedItem="{Binding RoleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DataGridComboxStyle}" />
+                                <!--<TextBox Text="{Binding RoleName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>-->
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="auto" Header="密码" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource GeneralTextBoxStyle}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="auto" Header="操作"  >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="修改" Style="{StaticResource ButtonStyle}"  Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid},Path=DataContext.UpdateCommand}" CommandParameter="{Binding ElementName=currentView}" ></Button>
+                                <Button Content="删除" Style="{StaticResource ButtonStyle}"  Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid},Path=DataContext.DeleteCommand}" CommandParameter="{Binding ElementName=currentView}" ></Button>
+                                <Button Content="保存" Style="{StaticResource ButtonStyle}"  Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid},Path=DataContext.SaveCommand}" CommandParameter="{Binding ElementName=currentView}" ></Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <StackPanel Grid.Row="2" HorizontalAlignment="Left" Orientation="Horizontal" Margin="0 0 10 0" >
+            <Button Content="添加用户" Style="{StaticResource ButtonStyle}" Command="{Binding InsertCommand}" CommandParameter="{Binding ElementName=currentView}"></Button>
+
+            <StackPanel Orientation="Horizontal" x:Name="InsertStackPanel" Visibility="Hidden">
+                <TextBox Text="用户名:"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>
+                <TextBox Text="{Binding OperatorInfoData.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" VerticalAlignment="Center" FontSize="18" ></TextBox>
+
+                <TextBox Text="角色:"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>
+                <TextBox Text="{Binding OperatorInfoData.RoleName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" VerticalAlignment="Center" FontSize="18" ></TextBox>
+
+                <TextBox Text="密码:"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>
+                <TextBox Text="{Binding OperatorInfoData.Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="120" VerticalAlignment="Center" FontSize="18" ></TextBox>
+
+                <Button Content="提交" Style="{StaticResource ButtonStyle}" Command="{Binding SubmitCommand}" CommandParameter="{Binding ElementName=currentView}"></Button>
+                <Button Content="取消" Style="{StaticResource ButtonStyle}" Command="{Binding CancelCommand}" CommandParameter="{Binding ElementName=currentView}"></Button>
+            </StackPanel>
+
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

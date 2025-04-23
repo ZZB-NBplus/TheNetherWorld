@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Server=.;Database=TheNetherWorld; TrustServerCertificate=true;User ID=sa;Password=123456" Microsoft.EntityFrameworkCore.SqlServer -Force

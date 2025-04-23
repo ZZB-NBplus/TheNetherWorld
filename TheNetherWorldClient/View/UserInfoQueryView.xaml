@@ -1,0 +1,186 @@
+﻿<UserControl x:Class="TheNetherWorldClient.View.UserInfoQueryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TheNetherWorldClient.View"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Text=">>生灵查询"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 0 0"></TextBlock>
+        </Grid>
+
+        <DataGrid Grid.Row="1" x:Name="entityDataGrid" ItemsSource="{Binding UserInfoList}"  RowStyle="{StaticResource DataGridRowStyle}"   Style="{StaticResource DataGridStyle}" CellStyle="{StaticResource DataGridCellStyle}"  AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Width="Auto" Header="生灵唯一编码" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding UniqueCode,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="登记记录" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding RegistrationState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="审判记录" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding JudgmentInfoState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="登出记录" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding LogoutState,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource GeneralTextBoxStyle}"  ></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="登记时间" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox  Text="{Binding RegistrationTime, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GeneralTextBoxStyle}" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="审判时间" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox  Text="{Binding JudgmentTime, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GeneralTextBoxStyle}" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="登出时间" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox  Text="{Binding LogoutTime, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GeneralTextBoxStyle}" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="名称" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource GeneralTextBoxStyle}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <DataGridTemplateColumn Width="Auto" Header="性别" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding Sex,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GeneralTextBoxStyle}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <DataGridTemplateColumn Width="Auto" Header="出生时间" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox  Text="{Binding BirthTime, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GeneralTextBoxStyle}" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="死亡时间" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding DeathTime, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GeneralTextBoxStyle}" />
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="寿命" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding Lifespan,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GeneralTextBoxStyle}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="死亡原因" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding DeathCause,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GeneralTextBoxStyle}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="生前行记录" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding PreDeathBehaviorRecord,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GeneralTextBoxStyle}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="Auto" Header="审判信息" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding JudgmentInfo,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource GeneralTextBoxStyle}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>
