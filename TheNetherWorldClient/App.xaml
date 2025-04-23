@@ -1,0 +1,17 @@
+﻿<Application x:Class="TheNetherWorldClient.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TheNetherWorldClient"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Style/TextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="Style/ButtonDictionary.xaml"/>
+                <ResourceDictionary Source="Style/DataGridDictionary.xaml"/>
+                <ResourceDictionary Source="Style/GeneralTextBoxDictionary.xaml"/>
+                <ResourceDictionary Source="Style/DataGridComboxDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

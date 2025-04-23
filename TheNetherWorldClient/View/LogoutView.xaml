@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="TheNetherWorldClient.View.LogoutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TheNetherWorldClient.View"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             x:Name="currentView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <TextBlock Text=">>生灵登出"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 0 0"></TextBlock>
+        </Grid>
+
+
+        <DataGrid Grid.Row="1" x:Name="entityDataGrid" ItemsSource="{Binding LogoutList}"  RowStyle="{StaticResource DataGridRowStyle}"  Style="{StaticResource DataGridStyle}" CellStyle="{StaticResource DataGridCellStyle}"  AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Width="120" Header="生灵唯一编码" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <Grid>
+                                <TextBox Text="{Binding UniqueCode,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  Style="{StaticResource GeneralTextBoxStyle}"></TextBox>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="180" Header="操作"  >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="提交" Style="{StaticResource ButtonStyle}"  Command="{Binding RelativeSource={RelativeSource AncestorType=DataGrid},Path=DataContext.SaveCommand}" CommandParameter="{Binding ElementName=currentView}" ></Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

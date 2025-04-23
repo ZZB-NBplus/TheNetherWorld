@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{28A3730D-0B95-4551-B2B2-18ED9F130084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{DDB23726-7058-4DFC-BB6D-5BADCE5B25D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLLTest", "BLLTest\BLLTest.csproj", "{B2C357ED-8A84-42E3-AA4F-53D6CC57477E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{E6FE4C14-E47C-4A62-8AEB-220E7DF21F7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNetherWorldWebApi", "TheNetherWorldWebApi\TheNetherWorldWebApi.csproj", "{6D038D6C-38BF-487B-873A-BD9D1D410B9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheNetherWorldClient", "TheNetherWorldClient\TheNetherWorldClient.csproj", "{AD47712F-9154-4C90-A943-ECE1DE8FA9BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28A3730D-0B95-4551-B2B2-18ED9F130084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28A3730D-0B95-4551-B2B2-18ED9F130084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28A3730D-0B95-4551-B2B2-18ED9F130084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28A3730D-0B95-4551-B2B2-18ED9F130084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDB23726-7058-4DFC-BB6D-5BADCE5B25D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB23726-7058-4DFC-BB6D-5BADCE5B25D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB23726-7058-4DFC-BB6D-5BADCE5B25D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB23726-7058-4DFC-BB6D-5BADCE5B25D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C357ED-8A84-42E3-AA4F-53D6CC57477E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C357ED-8A84-42E3-AA4F-53D6CC57477E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C357ED-8A84-42E3-AA4F-53D6CC57477E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C357ED-8A84-42E3-AA4F-53D6CC57477E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6FE4C14-E47C-4A62-8AEB-220E7DF21F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6FE4C14-E47C-4A62-8AEB-220E7DF21F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6FE4C14-E47C-4A62-8AEB-220E7DF21F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6FE4C14-E47C-4A62-8AEB-220E7DF21F7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D038D6C-38BF-487B-873A-BD9D1D410B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D038D6C-38BF-487B-873A-BD9D1D410B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D038D6C-38BF-487B-873A-BD9D1D410B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D038D6C-38BF-487B-873A-BD9D1D410B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD47712F-9154-4C90-A943-ECE1DE8FA9BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD47712F-9154-4C90-A943-ECE1DE8FA9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD47712F-9154-4C90-A943-ECE1DE8FA9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD47712F-9154-4C90-A943-ECE1DE8FA9BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
