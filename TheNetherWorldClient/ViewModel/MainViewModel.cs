@@ -47,9 +47,8 @@ namespace TheNetherWorldClient.ViewModel
             get
             {
                 return new RelayCommand(() => {
-                    Task.Run(() =>{ GetRegistrationCount(); });
-                    Task.Run(() =>{ GetJudgmentInfoCount(); });
-                    Task.Run(() =>{ GetLogoutCount(); });
+                    Task.Run(() =>{ GetRegistrationCount(); GetJudgmentInfoCount(); GetLogoutCount(); });
+                    
 
                 });
             }
