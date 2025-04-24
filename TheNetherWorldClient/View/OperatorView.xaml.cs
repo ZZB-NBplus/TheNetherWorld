@@ -11,7 +11,6 @@ namespace TheNetherWorldClient.View
         public OperatorView()
         {
             InitializeComponent();
-            this.DataContext = new OperatorViewModel();
         }
     }
 }

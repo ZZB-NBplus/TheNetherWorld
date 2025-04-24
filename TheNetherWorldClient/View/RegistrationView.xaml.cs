@@ -11,7 +11,6 @@ namespace TheNetherWorldClient.View
         public RegistrationView()
         {
             InitializeComponent();
-            this.DataContext = new RegistrationViewModel();
         }
     }
 }

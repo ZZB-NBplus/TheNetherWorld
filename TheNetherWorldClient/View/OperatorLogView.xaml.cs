@@ -11,7 +11,6 @@ namespace TheNetherWorldClient.View
         public OperatorLogView()
         {
             InitializeComponent();
-            this.DataContext = new OperatorLogViewModel();
         }
     }
 }

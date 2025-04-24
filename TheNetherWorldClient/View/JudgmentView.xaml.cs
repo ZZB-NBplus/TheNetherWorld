@@ -11,7 +11,6 @@ namespace TheNetherWorldClient.View
         public JudgmentView()
         {
             InitializeComponent();
-            this.DataContext = new JudgmentViewModel();
             
         }
     }

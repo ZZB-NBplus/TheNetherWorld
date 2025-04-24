@@ -11,7 +11,6 @@ namespace TheNetherWorldClient.View
         public LogoutView()
         {
             InitializeComponent();
-            this.DataContext = new LogoutViewModel();
         }
     }
 }

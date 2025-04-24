@@ -11,7 +11,6 @@ namespace TheNetherWorldClient.View
         public MainView()
         {
             InitializeComponent();
-            this.DataContext = new MainViewModel();
         }
     }
 }

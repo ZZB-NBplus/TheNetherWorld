@@ -11,8 +11,6 @@ namespace TheNetherWorldClient.View
         public RoleView()
         {
             InitializeComponent();
-            this.DataContext = new RoleViewModel();
-
         }
     }
 }

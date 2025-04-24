@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:local="clr-namespace:TheNetherWorldClient.View"
+             xmlns:vm="clr-namespace:TheNetherWorldClient"
+             DataContext="{x:Static vm:AppData.JudgmentViewModel}"
              mc:Ignorable="d" 
-             x:Name="currentView"
+             x:Name="currentView"   
              d:DesignHeight="450" d:DesignWidth="800">
 
     <i:Interaction.Triggers>

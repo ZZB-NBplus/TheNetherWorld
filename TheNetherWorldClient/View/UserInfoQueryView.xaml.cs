@@ -24,7 +24,6 @@ namespace TheNetherWorldClient.View
         public UserInfoQueryView()
         {
             InitializeComponent();
-            this.DataContext = new UserInfoQueryViewModel();
         }
     }
 }
