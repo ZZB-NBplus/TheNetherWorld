@@ -61,28 +61,23 @@ namespace TheNetherWorldClient.ViewModel
         /// </summary>
         private async void GetRegistrationCount()
         {
-            while (true)
+            using (HttpClient client = new HttpClient())
             {
-                using (HttpClient client = new HttpClient())
+                try
                 {
-                    try
-                    {
-                        HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetRegistrationCount");
+                    HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetRegistrationCount");
 
-                        response.EnsureSuccessStatusCode();
+                    response.EnsureSuccessStatusCode();
 
-                        RegistrationCount = await response.Content.ReadAsStringAsync();
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
-
+                    RegistrationCount = await response.Content.ReadAsStringAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
                 }
 
-                Thread.Sleep(2000);
             }
-            
+
         }
 
         /// <summary>
@@ -90,26 +85,21 @@ namespace TheNetherWorldClient.ViewModel
         /// </summary>
         private async void GetJudgmentInfoCount()
         {
-            while (true)
+            using (HttpClient client = new HttpClient())
             {
-                using (HttpClient client = new HttpClient())
+                try
                 {
-                    try
-                    {
-                        HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetJudgmentInfoCount");
+                    HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetJudgmentInfoCount");
 
-                        response.EnsureSuccessStatusCode();
+                    response.EnsureSuccessStatusCode();
 
-                        JudgmentInfoCount = await response.Content.ReadAsStringAsync();
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
-
+                    JudgmentInfoCount = await response.Content.ReadAsStringAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
                 }
 
-                Thread.Sleep(2000);
             }
         }
 
@@ -118,26 +108,21 @@ namespace TheNetherWorldClient.ViewModel
         /// </summary>
         private async void GetLogoutCount()
         {
-            while (true)
+            using (HttpClient client = new HttpClient())
             {
-                using (HttpClient client = new HttpClient())
+                try
                 {
-                    try
-                    {
-                        HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetLogoutCount");
+                    HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetLogoutCount");
 
-                        response.EnsureSuccessStatusCode();
+                    response.EnsureSuccessStatusCode();
 
-                        LogoutCount = await response.Content.ReadAsStringAsync();
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex);
-                    }
-
+                    LogoutCount = await response.Content.ReadAsStringAsync();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
                 }
 
-                Thread.Sleep(2000);
             }
         }
 
