@@ -39,7 +39,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            HttpResponseMessage response = await client.GetAsync("https://localhost/TheNetherWorld/GetAllRoleInfo");
+                            HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetAllRoleInfo");
 
                             response.EnsureSuccessStatusCode();
 
@@ -120,7 +120,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            string baseUrl = "https://localhost/TheNetherWorld/UpdateRoleInfo";
+                            string baseUrl = $"{AppData.Api}/UpdateRoleInfo";
 
                             var parameters = HttpUtility.ParseQueryString(string.Empty);
                             parameters["operatorName"] = "包拯";

@@ -1,13 +1,5 @@
-﻿using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using TheNetherWorldClient.View;
 
 namespace TheNetherWorldClient
@@ -19,6 +11,8 @@ namespace TheNetherWorldClient
     {
         public MainWindow()
         {
+            AppData.Api=Settings.Default.Api;
+
             LoginView loginView = new LoginView();
             loginView.ShowDialog();
             if (loginView.DialogResult != true)
@@ -29,6 +23,8 @@ namespace TheNetherWorldClient
 
             Name.Text = AppData.Name;
             Role.Text=AppData.Role.Name;
+
+            
         }
 
         private void RadioButton_Click_SwitchPage(object sender, RoutedEventArgs e)

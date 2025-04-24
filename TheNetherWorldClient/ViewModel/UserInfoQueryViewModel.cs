@@ -33,7 +33,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            HttpResponseMessage response = await client.GetAsync("https://localhost/TheNetherWorld/GetAllUserInfo");
+                            HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetAllUserInfo");
 
                             response.EnsureSuccessStatusCode();
 

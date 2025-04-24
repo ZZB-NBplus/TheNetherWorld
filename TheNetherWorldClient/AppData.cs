@@ -17,5 +17,7 @@ namespace TheNetherWorldClient
         public static RegistrationViewModel RegistrationViewModel { get; set; }=new RegistrationViewModel();
         public static RoleViewModel RoleViewModel { get; set; }=new RoleViewModel();
         public static UserInfoQueryViewModel UserInfoQueryViewModel { get; set; }=new UserInfoQueryViewModel();
+
+        public static string Api { get; set; } = "https://localhost/TheNetherWorld";
     }
 }

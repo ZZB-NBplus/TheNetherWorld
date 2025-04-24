@@ -67,7 +67,7 @@ namespace TheNetherWorldClient.ViewModel
                 {
                     try
                     {
-                        HttpResponseMessage response = await client.GetAsync("https://localhost/TheNetherWorld/GetRegistrationCount");
+                        HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetRegistrationCount");
 
                         response.EnsureSuccessStatusCode();
 
@@ -96,7 +96,7 @@ namespace TheNetherWorldClient.ViewModel
                 {
                     try
                     {
-                        HttpResponseMessage response = await client.GetAsync("https://localhost/TheNetherWorld/GetJudgmentInfoCount");
+                        HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetJudgmentInfoCount");
 
                         response.EnsureSuccessStatusCode();
 
@@ -124,7 +124,7 @@ namespace TheNetherWorldClient.ViewModel
                 {
                     try
                     {
-                        HttpResponseMessage response = await client.GetAsync("https://localhost/TheNetherWorld/GetLogoutCount");
+                        HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetLogoutCount");
 
                         response.EnsureSuccessStatusCode();
 

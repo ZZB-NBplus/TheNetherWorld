@@ -35,7 +35,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            HttpResponseMessage response = await client.GetAsync("https://localhost/TheNetherWorld/GetNotJudgmentInfo");
+                            HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetNotJudgmentInfo");
 
                             response.EnsureSuccessStatusCode();
 
@@ -138,7 +138,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            string baseUrl = "https://localhost/TheNetherWorld/AddJudgmentInfo";
+                            string baseUrl = $"{AppData.Api}/AddJudgmentInfo";
 
                             var parameters = HttpUtility.ParseQueryString(string.Empty);
                             parameters["operatorName"] = "包拯";

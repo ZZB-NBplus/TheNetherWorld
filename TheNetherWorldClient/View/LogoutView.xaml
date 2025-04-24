@@ -27,7 +27,6 @@
             <TextBlock Text=">>生灵登出"  FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 10 0 0"></TextBlock>
         </Grid>
 
-
         <DataGrid Grid.Row="1" x:Name="entityDataGrid" ItemsSource="{Binding LogoutList}"  RowStyle="{StaticResource DataGridRowStyle}"  Style="{StaticResource DataGridStyle}" CellStyle="{StaticResource DataGridCellStyle}"  AutoGenerateColumns="False" >
             <DataGrid.Columns>
 

@@ -39,7 +39,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            HttpResponseMessage response = await client.GetAsync("https://localhost/TheNetherWorld/GetNotLogoutInfo");
+                            HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetNotLogoutInfo");
 
                             response.EnsureSuccessStatusCode();
 
@@ -100,7 +100,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            string baseUrl = "https://localhost/TheNetherWorld/AddLogoutInfo";
+                            string baseUrl = $"{AppData.Api}/AddLogoutInfo";
 
                             var parameters = HttpUtility.ParseQueryString(string.Empty);
                             parameters["uniqueCode"] = logoutInfoData.UniqueCode;

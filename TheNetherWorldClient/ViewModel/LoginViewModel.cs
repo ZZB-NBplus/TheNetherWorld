@@ -33,7 +33,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            string baseUrl = "https://localhost/TheNetherWorld/Login";
+                            string baseUrl = $"{AppData.Api}/Login";
 
                             var parameters = HttpUtility.ParseQueryString(string.Empty);
                             parameters["name"] = loginView.Name.Text;

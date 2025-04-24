@@ -47,7 +47,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            string baseUrl = "https://localhost/TheNetherWorld/AddRegistrationInfo";
+                            string baseUrl = $"{AppData.Api}/AddRegistrationInfo";
 
                             var parameters = HttpUtility.ParseQueryString(string.Empty);
                             parameters["uniqueCode"] = UniqueCode;

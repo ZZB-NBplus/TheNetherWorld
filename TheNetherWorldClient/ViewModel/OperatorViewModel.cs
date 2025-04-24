@@ -53,7 +53,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            HttpResponseMessage response = await client.GetAsync("https://localhost/TheNetherWorld/GetAllOperatorInfo");
+                            HttpResponseMessage response = await client.GetAsync($"{AppData.Api}/GetAllOperatorInfo");
 
                             response.EnsureSuccessStatusCode();
 
@@ -149,7 +149,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            string baseUrl = "https://localhost/TheNetherWorld/UpdateOperatorInfo";
+                            string baseUrl = $"{AppData.Api}/UpdateOperatorInfo";
 
                             var parameters = HttpUtility.ParseQueryString(string.Empty);
                             parameters["operatorName"] = "包拯";
@@ -220,7 +220,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            string baseUrl = "https://localhost/TheNetherWorld/AddOperatorInfo";
+                            string baseUrl = $"{AppData.Api}/AddOperatorInfo";
 
                             var parameters = HttpUtility.ParseQueryString(string.Empty);
                             parameters["operatorName"] = "包拯";
@@ -275,7 +275,7 @@ namespace TheNetherWorldClient.ViewModel
                     {
                         try
                         {
-                            string baseUrl = "https://localhost/TheNetherWorld/DeleteOperatorInfo";
+                            string baseUrl = $"{AppData.Api}/DeleteOperatorInfo";
 
                             var parameters = HttpUtility.ParseQueryString(string.Empty);
                             parameters["targetName"] = operatorInfo.Name;
